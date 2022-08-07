@@ -17,7 +17,7 @@ server.on('request', (request, response) => {
     return;
   }
 
-  const {pathname, search} = url.parse(path as string);
+  const {pathname} = url.parse(path as string);
 
   const filename = pathname?.substring(1) || 'index.html';
   fs.readFile(p.resolve(publicDir, filename as string), (err, data) => {
